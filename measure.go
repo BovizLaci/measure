@@ -18,3 +18,12 @@ func MeasureGoFuncSpeed(f func(parameters ...any) ([]any, error), funcParams ...
 	fmt.Printf("Duration: %v s\n", elapsed.Seconds())
 	return nil
 }
+
+
+func Reverse(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
