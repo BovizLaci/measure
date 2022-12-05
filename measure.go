@@ -20,10 +20,17 @@ func MeasureGoFuncSpeed(f func(parameters ...any) ([]any, error), funcParams ...
 }
 
 
-func Reverse(s string) string {
+func ReverseString(s string) string {
 	runes := []rune(s)
 	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
 		runes[i], runes[j] = runes[j], runes[i]
 	}
 	return string(runes)
+}
+
+func ReverseSlice(s []any) ([]any) {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
+	return s
 }
