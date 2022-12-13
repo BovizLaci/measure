@@ -28,7 +28,7 @@ func ReverseString(s string) string {
 	return string(runes)
 }
 
-func ReverseSlice(s []any) ([]any) {
+func ReverseSlice[T any](s []any) ([]any) {
 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
 		s[i], s[j] = s[j], s[i]
 	}
